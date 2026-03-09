@@ -831,7 +831,7 @@ border:none;
 
     .hero-text{
         position:absolute;   /* 👈 importante */
-        bottom:8%;
+        bottom:2%;
         right:5%;
         text-align:center;
     }
