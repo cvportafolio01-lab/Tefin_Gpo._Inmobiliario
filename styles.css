@@ -824,7 +824,7 @@ border:none;
 
     .hero-text{
         position:absolute;
-        bottom: 30px;      /* pegado abajo */
+        bottom: 20px;      /* pegado abajo */
         left:20px;        /* alineado a la izquierda */
         right:20px;
         text-align:left;  /* texto de izquierda a derecha */
