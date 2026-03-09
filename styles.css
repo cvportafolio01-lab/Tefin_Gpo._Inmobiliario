@@ -850,3 +850,41 @@ border:none;
         font-size:42px;
     }
 }
+
+
+@media (max-width:768px){
+
+    .hero-section{
+        padding:60px 20px;
+        text-align:center;
+    }
+
+    .agent-photo{
+        width:160px;
+        height:160px;
+        margin-bottom:20px;
+    }
+
+    .hero-text{
+        position:absolute;
+        bottom:5%;   /* controla qué tan abajo queda */
+        left:50%;
+        transform:translateX(-50%);
+        text-align:center;
+        width:90%;
+    }
+
+    .stats-title{
+        font-size:28px;
+    }
+
+    .stat-box{
+        width:100%;
+        max-width:320px;
+        padding:40px 20px;
+    }
+
+    .counter{
+        font-size:42px;
+    }
+}
