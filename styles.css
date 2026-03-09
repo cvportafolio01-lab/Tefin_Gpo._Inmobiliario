@@ -1,0 +1,852 @@
+:root{
+--primary:#7b1fa2;
+--secondary:#4decef;
+}
+
+body{
+font-family:Segoe UI;
+padding-top:70px;
+}
+
+/* ==========================
+   BOTÓN CONTACTO NAVBAR
+========================== */
+
+.btn-contacto{
+    background:var(--azul-agua);
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    transition:.3s ease;
+    font-weight:500;
+}
+
+.btn-contacto:hover{
+    background:white;
+    color:var(--azul-agua);
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
+
+/* ==========================
+   NAVBAR LINKS PREMIUM
+========================== */
+
+:root{
+    --azul-agua:#39e1d1;
+}
+
+/* Links normales */
+.navbar-nav .nav-link{
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:.3s ease;
+}
+
+/* Hover color */
+.navbar-nav .nav-link:hover{
+    color:var(--azul-agua);
+}
+
+/* Línea animada */
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:var(--azul-agua);
+    transition:.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after{
+    width:100%;
+}
+
+/* Pequeño movimiento */
+.navbar-nav .nav-link:hover{
+    transform:translateY(-2px);
+}
+
+
+
+/* ==========================
+   MARCA NAVBAR PERSONALIZADA
+========================== */
+
+:root{
+    --azul-agua:#26a69a; /* cámbialo si tu azul es otro */
+}
+
+/* Icono fijo azul */
+.brand-icon{
+    color:var(--azul-agua);
+    transition:.3s;
+}
+
+/* Texto blanco */
+.brand-text{
+    color:white;
+    transition:.3s;
+    position:relative;
+}
+
+/* Hover dinámico */
+.brand-custom:hover .brand-text{
+    color:var(--azul-agua);
+}
+
+/* Línea animada debajo */
+.brand-text::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0%;
+    height:2px;
+    background:var(--azul-agua);
+    transition:.3s ease;
+}
+
+.brand-custom:hover .brand-text::after{
+    width:100%;
+}
+
+/* Efecto leve de escala */
+.brand-custom:hover{
+    transform:translateY(-2px);
+}
+
+
+
+
+.navbar{
+    margin-bottom:0 !important;
+}
+
+.hero-section{ height:90vh; background: linear-gradient(rgba(0,0,0,.0), rgba(0,0,0,0)), url("imagenes/tefin3.jpeg"); background-size:cover; background-position:center; display:flex; align-items:center; background-size: 82% 100%; margin-top:-15px; }
+/* Imagen redonda perfecta */
+/* Imagen grande arriba izquierda */
+.agent-photo{
+    position:absolute;
+    top:18%;
+    left:2%;
+
+    width:clamp(150px, 25vw, 300px);
+    height:clamp(150px, 25vw, 300px);
+
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid #20c997;
+    box-shadow:0 25px 60px rgba(0,0,0,.6);
+}
+.hero-text{
+    position:absolute;
+
+    bottom:10%;   /* antes 90px */
+    right:5%;     /* antes 40px */
+
+    color:#06edf9;
+    text-align:right;
+}
+
+/* CARDS */
+.card{
+border-radius:12px;
+}
+
+.counter{
+font-size:3rem;
+color:var(--primary);
+font-weight:bold;
+}
+
+.btn-primary{
+background:var(--primary);
+border:none;
+}
+
+.btn-success{
+background:var(--secondary);
+border:none;
+}
+
+
+.btn-primary {
+    background-color: #00bcd4;
+    border-color: #00bcd4;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7;
+    border-color: #0097a7;
+}
+
+
+
+/* FONDO GENERAL */
+.stats-section{
+    padding:100px 20px;
+    background: radial-gradient(circle at top,#1a0125,#0d0014);
+    text-align:center;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* TÍTULO */
+.stats-title{
+    font-size:42px;
+    margin-bottom:60px;
+    background:linear-gradient(90deg,#21bde8,#00ffd5);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* CONTENEDOR */
+.stats-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* TARJETAS */
+.stat-box{
+    background: rgba(255,255,255,0.05);
+    border-radius:18px;
+    padding:50px 40px;
+    width:260px;
+    backdrop-filter: blur(12px);
+    border:1px solid rgba(38, 215, 250, 0.4);
+    position:relative;
+    transition:.35s;
+}
+
+/* EFECTO LUZ */
+.stat-box::before{
+    content:'';
+    position:absolute;
+    inset:-1px;
+    border-radius:18px;
+    background:linear-gradient(45deg,#a855f7,#00ffd5);
+    opacity:.3;
+    z-index:-1;
+    filter:blur(8px);
+}
+
+.stat-box:hover{
+    transform:translateY(-12px) scale(1.03);
+}
+
+/* NÚMEROS */
+.counter{
+    font-size:64px;
+    font-weight:800;
+    display:block;
+    margin-bottom:10px;
+    color:#00ffd5;
+    text-shadow:0 0 15px rgba(0,255,213,.6);
+}
+
+/* TEXTO */
+.stat-box p{
+    font-size:18px;
+    opacity:.9;
+}
+
+/* propiedades*/
+.property-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.property-img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-img {
+    transform: scale(1.1);
+}
+
+.price-tag {
+    background: var(--primary-color);
+    color: rgb(173, 14, 170);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-custom {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.property-features {
+    display: flex;
+    gap: 1rem;
+    color: #6c757d;
+}
+
+.property-features span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.filter-section{
+    margin-bottom:50px;
+}
+
+
+
+
+
+/* ==========================
+   boton reconocimientos bbva
+========================== */
+
+
+.bbva-btn-container{
+    text-align:center;
+    margin-top:50px;
+}
+
+.bbva-btn{
+    display:inline-block;
+    padding:15px 35px;
+    font-size:18px;
+    font-weight:600;
+    color:#ffffff;
+    text-decoration:none;
+    background:linear-gradient(135deg,#1fd1c0,#0fb9b1);
+    border-radius:50px;
+    transition:all 0.35s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.bbva-btn:hover{
+    background:linear-gradient(135deg,#0fb9b1,#1fd1c0);
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+
+
+
+/* =================================
+   SOBRE MÍ - ESTILO MODERNO
+================================= */
+
+.about-section{
+    padding:120px 20px;
+    background: linear-gradient(135deg,#ffffff,#f5f7fb);
+    position:relative;
+}
+
+/* BADGE */
+.about-badge{
+    display:inline-block;
+    padding:6px 18px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#25c7ef,#26a69a);
+    color:white;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+/* TITULO */
+.about-title{
+    font-size:40px;
+    font-weight:800;
+    color:#1ed1ec;
+    margin-bottom:8px;
+}
+
+.about-subtitle{
+    font-weight:500;
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* TEXTO */
+.about-text{
+    font-size:16px;
+    color:#555;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+/* TARJETAS DE MÉTRICAS */
+.about-highlights{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.about-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    min-width:150px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.about-card span{
+    font-size:30px;
+    font-weight:800;
+    color:#26a69a;
+    display:block;
+}
+
+.about-card p{
+    margin:0;
+    font-size:14px;
+    color:#666;
+}
+
+.about-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 60px rgba(0,0,0,.15);
+}
+
+/* BOTÓN */
+.btn-about{
+    background:linear-gradient(45deg,#04fffb,#42c5c3);
+    border:none;
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-about:hover{
+    transform:scale(1.05);
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+
+.about-card span{
+    font-size:42px;
+    font-weight:900;
+    background:linear-gradient(45deg,#3ba5e7,#26a69a);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ===============================
+   RECONOCIMIENTOS
+================================= */
+
+.recognitions-section{
+    padding:100px 20px;
+    background: linear-gradient(135deg,#f4f6f9,#ffffff);
+}
+
+.section-title{
+    font-size:38px;
+    font-weight:800;
+    color:#399dc5;
+}
+
+.section-subtitle{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.recognition-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+.recognition-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+}
+
+/* IMAGEN */
+.recognition-img{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    background:#eee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.recognition-img.vertical{
+    height:300px;
+}
+
+.recognition-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.recognition-card:hover img{
+    transform:scale(1.05);
+}
+
+/* CONTENIDO */
+.recognition-content{
+    padding:20px;
+    text-align:center;
+}
+
+.recognition-content h5{
+    font-weight:700;
+    color:#2fa9bf;
+    margin-bottom:8px;
+}
+
+.recognition-content p{
+    font-size:14px;
+    color:#666;
+    margin:0;
+}
+
+
+
+/*contacto*/
+/* =========================
+   videos  MODERNO
+========================= */
+
+/* =========================
+   VIDEO SECTION PRO
+========================= */
+
+.video-section{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    padding:90px 10%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(66,197,195,0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(4,255,251,0.15), transparent 40%),
+    #ffffff;
+}
+
+
+
+
+.video-wrapper{
+    position:relative;
+    z-index:1;
+}
+/* TARJETA */
+.video-wrapper{
+    width:420px;
+    padding:6px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#26a69a,#04fffb);
+    transition:.4s;
+}
+
+/* EFECTO HOVER */
+.video-wrapper:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+/* VIDEO */
+.video-wrapper video{
+    width:100%;
+    border-radius:16px;
+    display:block;
+}
+
+
+/* =========================
+   boton de sigueme en mis redes sociales debajo de los vidos */
+   /* BOTON REDES */
+
+.follow-container{
+    text-align:center;
+    margin-top:40px;
+}
+
+.follow-btn{
+    display:inline-block;
+    padding:14px 32px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#04fffb,#42c5c3);
+    color:white;
+    font-weight:600;
+    text-decoration:none;
+    letter-spacing:.5px;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.follow-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    background:linear-gradient(135deg,#42c5c3,#04fffb);
+}
+
+
+
+/* ========================
+   CONTACT INFO
+======================== */
+
+.contact-info{
+    background: linear-gradient(135deg,#04fffb,#42c5c3);
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+/* ITEM */
+.contact-info-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+    transition:.3s;
+}
+
+/* ICONOS GRANDES Y VISIBLES */
+.contact-info-item i{
+    font-size:24px;
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#26a69a;
+    color:white;
+    transition:.3s;
+    box-shadow:0 0 15px rgba(38,166,154,.6);
+}
+
+/* EFECTO HOVER */
+.contact-info-item:hover i{
+    transform:scale(1.15) rotate(8deg);
+    box-shadow:0 0 25px rgba(38,166,154,1);
+}
+
+/* TEXTO MÁS VISIBLE */
+.contact-info h6{
+    margin-bottom:4px;
+    font-weight:600;
+}
+
+.contact-info p{
+    margin:0;
+    color:rgba(255,255,255,.85);
+}
+/* BOTONES SOCIALES MODERNOS */
+
+.social-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#26a69a;
+    color:white;
+    font-size:18px;
+    transition:.3s;
+    text-decoration:none;
+}
+
+.social-btn:hover{
+    background:white;
+    color:#7b1fa2;
+    transform:translateY(-6px) scale(1.1);
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+
+
+
+
+/* ==========================
+   BOTÓN FLOTANTE WHATSAPP
+========================== */
+
+.whatsapp-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    z-index:999;
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+    box-shadow:0 8px 22px rgba(0,0,0,.35);
+}
+
+
+
+
+
+/* ==============================
+   FOOTER ELEGANTE
+============================== */
+
+.main-footer{
+    background:#111;
+    color:#ccc;
+    padding:70px 20px 30px;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* Marca */
+.footer-brand{
+    color:white;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.footer-text{
+    font-size:14px;
+    color:#aaa;
+    margin:0;
+}
+
+/* Links */
+.footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{
+    display:inline-block;
+    margin:0 10px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#bbb;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#26a69a;
+}
+
+/* Redes */
+.footer-social a{
+    color:#30daea;
+    font-size:18px;
+    margin-left:15px;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    color:#26a69a;
+    transform:translateY(-3px);
+}
+
+/* Línea divisoria */
+.footer-divider{
+    margin:40px 0 20px;
+    border-color:rgba(255,255,255,.1);
+}
+
+/* Copy */
+.footer-copy{
+    font-size:13px;
+    color:#888;
+}
+
+
+
+
+.footer-brand{
+    color: #30daea;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.footer-brand:hover{
+    color: #30daea;
+    text-shadow: 0 0 10px rgba(0,198,255,0.7);
+}
+
+
+
+/* =========================
+   RESPONSIVE GENERAL
+========================= */
+
+@media (max-width:768px){
+
+    .hero-section{
+        padding:60px 20px;
+        align-items:flex-start;
+    }
+
+    .agent-photo{
+        width:160px;
+        height:160px;
+        top:15%;
+        left:5%;
+    }
+
+    .hero-text{
+        position:absolute;   /* 👈 importante */
+        bottom:8%;
+        right:5%;
+        text-align:center;
+    }
+
+    .stats-title{
+        font-size:28px;
+    }
+
+    .stat-box{
+        width:100%;
+        max-width:320px;
+        padding:40px 20px;
+    }
+
+    .counter{
+        font-size:42px;
+    }
+}
