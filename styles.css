@@ -814,77 +814,30 @@ border:none;
 /* =========================
    RESPONSIVE GENERAL
 ========================= */
-
 @media (max-width:768px){
 
     .hero-section{
+        position:relative;
+        min-height:80vh;
         padding:60px 20px;
-        align-items:flex-start;
-    }
-
-    .agent-photo{
-        width:160px;
-        height:160px;
-        top:15%;
-        left:5%;
-    }
-
-    .hero-text{
-        position:absolute;   /* 👈 importante */
-        bottom:2%;
-        right:5%;
-        text-align:center;
-    }
-
-    .stats-title{
-        font-size:28px;
-    }
-
-    .stat-box{
-        width:100%;
-        max-width:320px;
-        padding:40px 20px;
-    }
-
-    .counter{
-        font-size:42px;
-    }
-}
-
-
-@media (max-width:768px){
-
-    .hero-section{
-        padding:60px 20px;
-        text-align:center;
-    }
-
-    .agent-photo{
-        width:160px;
-        height:160px;
-        margin-bottom:20px;
     }
 
     .hero-text{
         position:absolute;
-        bottom:5%;   /* controla qué tan abajo queda */
-        left:50%;
-        transform:translateX(-50%);
-        text-align:center;
-        width:90%;
+        bottom: 40px;      /* pegado abajo */
+        left:20px;        /* alineado a la izquierda */
+        right:20px;
+        text-align:left;  /* texto de izquierda a derecha */
     }
 
-    .stats-title{
-        font-size:28px;
+    .hero-text h1{
+        font-size:20px;   /* más pequeño para que no tape */
+        line-height:1.2;
     }
 
-    .stat-box{
-        width:100%;
-        max-width:320px;
-        padding:40px 20px;
+    .hero-text p{
+        font-size:15px;
+        margin-bottom:0;
     }
 
-    .counter{
-        font-size:42px;
-    }
 }
