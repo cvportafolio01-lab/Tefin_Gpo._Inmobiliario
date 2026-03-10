@@ -449,6 +449,78 @@ border:none;
     -webkit-text-fill-color:transparent;
 }
 
+
+
+
+
+
+/* ==========================
+   DIRECTOR DE VENTAS
+========================== */
+.director-section {
+    background: linear-gradient(135deg,#04fffb,#42c5c3);
+    border-radius: 20px;
+    padding: 60px 20px;
+    margin: 60px auto;
+    max-width: 1100px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.director-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 5px solid #26a69a;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+
+.director-photo:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 20px 40px rgba(38,166,154,0.7);
+}
+
+
+.director-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+
+.director-name:hover {
+    color: #7b1fa2;
+    text-shadow: 0 0 8px #7b1fa2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===============================
    RECONOCIMIENTOS
 ================================= */
@@ -723,6 +795,32 @@ border:none;
 
 
 
+
+
+
+/* BOTON FACEBOOK (arriba del WhatsApp) */
+.facebook-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:95px; /* lo coloca arriba del WhatsApp */
+    right:20px;
+    background:#1877F2;
+    color:white;
+    border-radius:50%;
+    text-align:center;
+    font-size:30px;
+    line-height:60px;
+    z-index:1000;
+    transition:.3s;
+}
+
+/* HOVER */
+.facebook-float:hover{
+    transform:scale(1.1);
+    box-shadow:0 8px 22px rgba(0,0,0,0.35);
+}
+
 /* ==============================
    FOOTER ELEGANTE
 ============================== */
@@ -840,4 +938,8 @@ border:none;
         margin-bottom:0;
     }
 
+    .director-photo:hover{
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 20px 40px rgba(38,166,154,0.7);
+}
 }
