@@ -824,122 +824,191 @@ border:none;
 /* ==============================
    FOOTER ELEGANTE
 ============================== */
-
-.main-footer{
-    background:#111;
-    color:#ccc;
-    padding:70px 20px 30px;
-    font-family:'Segoe UI', sans-serif;
+.main-footer {
+    background: #111;
+    color: #ccc;
+    padding: 70px 20px 30px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* Marca */
-.footer-brand{
-    color:white;
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-.footer-text{
-    font-size:14px;
-    color:#aaa;
-    margin:0;
-}
-
-/* Links */
-.footer-links{
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-
-.footer-links li{
-    display:inline-block;
-    margin:0 10px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:#bbb;
-    font-size:14px;
-    transition:.3s;
-}
-
-.footer-links a:hover{
-    color:#26a69a;
-}
-
-/* Redes */
-.footer-social a{
-    color:#30daea;
-    font-size:18px;
-    margin-left:15px;
-    transition:.3s;
-}
-
-.footer-social a:hover{
-    color:#26a69a;
-    transform:translateY(-3px);
-}
-
-/* Línea divisoria */
-.footer-divider{
-    margin:40px 0 20px;
-    border-color:rgba(255,255,255,.1);
-}
-
-/* Copy */
-.footer-copy{
-    font-size:13px;
-    color:#888;
-}
-
-
-
-
-.footer-brand{
+.footer-brand {
     color: #30daea;
     font-weight: 700;
+    margin-bottom: 10px;
     transition: all 0.3s ease;
 }
 
-.footer-brand:hover{
+.footer-brand:hover {
     color: #30daea;
     text-shadow: 0 0 10px rgba(0,198,255,0.7);
 }
 
+.footer-text {
+    font-size: 14px;
+    color: #aaa;
+    margin: 0;
+}
 
+/* Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
+.footer-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #26a69a;
+}
+
+/* Redes Sociales */
+.footer-social a {
+    color: #30daea;
+    font-size: 18px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #26a69a;
+    transform: translateY(-3px);
+}
+
+/* Línea divisoria */
+.footer-divider {
+    margin: 40px 0 20px;
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* Copy */
+.footer-copy {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Footer aviso largo */
+.footer-privacy {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-privacy a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-privacy a:hover {
+    color: #ffc107;
+}
+
+/* POPUP AVISO DE PRIVACIDAD */
+.privacy-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.privacy-popup.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.privacy-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.privacy-box h4 {
+    margin-bottom: 1rem;
+}
+
+.privacy-box p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.privacy-box a {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.privacy-box a:hover {
+    text-decoration: underline;
+}
+
+.privacy-box button {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.privacy-box button:hover {
+    background-color: #0b5ed7;
+}
 /* =========================
    RESPONSIVE GENERAL
 ========================= */
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .hero-section{
-        position:relative;
-        min-height:80vh;
-        padding:60px 20px;
+    .hero-section {
+        position: relative;
+        min-height: 80vh;
+        padding: 60px 20px;
     }
 
-    .hero-text{
-        position:absolute;
-        bottom: 58px;      /* pegado abajo */
-        left:20px;        /* alineado a la izquierda */
-        right:20px;
-        text-align:left;  /* texto de izquierda a derecha */
+    .hero-text {
+        position: absolute;
+        bottom: 58px;
+        left: 20px;
+        right: 20px;
+        text-align: left;
     }
 
-    .hero-text h1{
-        font-size:28px;   /* más pequeño para que no tape */
-        line-height:1.2;
+    .hero-text h1 {
+        font-size: 28px;
+        line-height: 1.2;
     }
 
-    .hero-text p{
-        font-size:20px;
-        margin-bottom:0;
+    .hero-text p {
+        font-size: 20px;
+        margin-bottom: 0;
     }
 
-    .director-photo:hover{
-    transform: scale(1.1) rotate(3deg);
-    box-shadow: 0 20px 40px rgba(38,166,154,0.7);
-}
+    .director-photo:hover {
+        transform: scale(1.1) rotate(3deg);
+        box-shadow: 0 20px 40px rgba(38,166,154,0.7);
+    }
 }

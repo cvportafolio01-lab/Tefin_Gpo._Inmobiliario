@@ -1,25 +1,27 @@
-document.addEventListener("DOMContentLoaded", ()=>{
+// ==============================
+// CONTADORES ANIMADOS
+// ==============================
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.counter').forEach(counter => {
+        const update = () => {
+            let target = +counter.dataset.target;
+            let c = +counter.innerText;
+            let inc = target / 120;
 
-document.querySelectorAll('.counter').forEach(counter=>{
-    const update=()=>{
-        let target=+counter.dataset.target;
-        let c=+counter.innerText;
-        let inc=target/120;
-
-        if(c<target){
-            counter.innerText=Math.ceil(c+inc);
-            setTimeout(update,20);
-        }else{
-            counter.innerText=target;
-        }
-    };
-    update();
+            if (c < target) {
+                counter.innerText = Math.ceil(c + inc);
+                setTimeout(update, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        update();
+    });
 });
 
-});
-  
-
-/*propiedades*/
+// ==============================
+// PROPIEDADES
+// ==============================
 let propiedadesData = [];
 
 async function cargarPropiedades() {
@@ -46,7 +48,7 @@ function crearTarjetaPropiedad(propiedad) {
     const estadoBadge = propiedad.estado === 'venta' 
         ? '<span class="badge bg-success badge-custom">En Venta</span>'
         : '<span class="badge bg-info badge-custom">En Renta</span>';
-    
+
     const caracteristicas = propiedad.caracteristicas
         .slice(0, 2)
         .map(c => `<span class="badge bg-secondary">${c}</span>`)
@@ -87,101 +89,98 @@ function crearTarjetaPropiedad(propiedad) {
     `;
 }
 
+// ==============================
+// MODAL DE DETALLES
+// ==============================
 function verDetalle(id) {
     const propiedad = propiedadesData.find(p => p.id === id);
-    if (propiedad) {
-        const caracteristicasLista = propiedad.caracteristicas
-            .map(c => `<li>${c}</li>`)
-            .join('');
-        
-        const modal = `
-            <div class="modal fade" id="modalPropiedad" tabindex="-1">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">${propiedad.titulo}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="${propiedad.imagen}" class="img-fluid rounded mb-3" alt="${propiedad.titulo}">
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <h6><i class="bi bi-geo-alt-fill text-primary"></i> Ubicación</h6>
-                                    <p>${propiedad.ubicacion}</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <h6><i class="bi bi-tag-fill text-primary"></i> Precio</h6>
-                                    <p class="fs-4 text-primary fw-bold">${formatearPrecio(propiedad.precio)}</p>
-                                </div>
+    if (!propiedad) return;
+
+    const caracteristicasLista = propiedad.caracteristicas.map(c => `<li>${c}</li>`).join('');
+
+    const modal = `
+        <div class="modal fade" id="modalPropiedad" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">${propiedad.titulo}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="${propiedad.imagen}" class="img-fluid rounded mb-3" alt="${propiedad.titulo}">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <h6><i class="bi bi-geo-alt-fill text-primary"></i> Ubicación</h6>
+                                <p>${propiedad.ubicacion}</p>
                             </div>
-                            <div class="row mb-3">
-                                <div class="col-4">
-                                    <i class="bi bi-door-closed"></i> <strong>${propiedad.habitaciones}</strong> Habitaciones
-                                </div>
-                                <div class="col-4">
-                                    <i class="bi bi-droplet"></i> <strong>${propiedad.banos}</strong> Baños
-                                </div>
-                                <div class="col-4">
-                                    <i class="bi bi-arrows-angle-expand"></i> <strong>${propiedad.area}m²</strong>
-                                </div>
+                            <div class="col-md-6">
+                                <h6><i class="bi bi-tag-fill text-primary"></i> Precio</h6>
+                                <p class="fs-4 text-primary fw-bold">${formatearPrecio(propiedad.precio)}</p>
                             </div>
-                            <h6>Descripción</h6>
-                            <p>${propiedad.descripcion}</p>
-                            <h6>Características</h6>
-                            <ul>${caracteristicasLista}</ul>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <a href="contacto.html" class="btn btn-primary">Contactar</a>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <i class="bi bi-door-closed"></i> <strong>${propiedad.habitaciones}</strong> Habitaciones
+                            </div>
+                            <div class="col-4">
+                                <i class="bi bi-droplet"></i> <strong>${propiedad.banos}</strong> Baños
+                            </div>
+                            <div class="col-4">
+                                <i class="bi bi-arrows-angle-expand"></i> <strong>${propiedad.area}m²</strong>
+                            </div>
                         </div>
+                        <h6>Descripción</h6>
+                        <p>${propiedad.descripcion}</p>
+                        <h6>Características</h6>
+                        <ul>${caracteristicasLista}</ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="contacto.html" class="btn btn-primary">Contactar</a>
                     </div>
                 </div>
             </div>
-        `;
-        
-        const existingModal = document.getElementById('modalPropiedad');
-        if (existingModal) {
-            existingModal.remove();
-        }
-        
-        document.body.insertAdjacentHTML('beforeend', modal);
-        const bsModal = new bootstrap.Modal(document.getElementById('modalPropiedad'));
-        bsModal.show();
-    }
+        </div>
+    `;
+
+    const existingModal = document.getElementById('modalPropiedad');
+    if (existingModal) existingModal.remove();
+
+    document.body.insertAdjacentHTML('beforeend', modal);
+    const bsModal = new bootstrap.Modal(document.getElementById('modalPropiedad'));
+    bsModal.show();
 }
 
+// ==============================
+// MOSTRAR PROPIEDADES
+// ==============================
 async function mostrarPropiedadesDestacadas() {
     const container = document.getElementById('featured-properties');
     if (!container) return;
-    
+
     const propiedades = await cargarPropiedades();
     const destacadas = propiedades.filter(p => p.destacada).slice(0, 3);
-    
+
     if (destacadas.length === 0) {
         container.innerHTML = '<div class="col-12"><p class="text-center text-muted">No hay propiedades destacadas disponibles</p></div>';
         return;
     }
-    
+
     container.innerHTML = destacadas.map(propiedad => crearTarjetaPropiedad(propiedad)).join('');
 }
 
 async function mostrarTodasLasPropiedades(filtro = 'todas') {
     const container = document.getElementById('properties-container');
     if (!container) return;
-    
+
     const propiedades = await cargarPropiedades();
     let propiedadesFiltradas = propiedades;
-    
-    if (filtro === 'venta') {
-        propiedadesFiltradas = propiedades.filter(p => p.estado === 'venta');
-    } else if (filtro === 'renta') {
-        propiedadesFiltradas = propiedades.filter(p => p.estado === 'renta');
-    } else if (filtro === 'casas') {
-        propiedadesFiltradas = propiedades.filter(p => p.tipo === 'Casa');
-    } else if (filtro === 'departamentos') {
-        propiedadesFiltradas = propiedades.filter(p => p.tipo === 'Departamento');
-    }
-    
+
+    if (filtro === 'venta') propiedadesFiltradas = propiedades.filter(p => p.estado === 'venta');
+    else if (filtro === 'renta') propiedadesFiltradas = propiedades.filter(p => p.estado === 'renta');
+    else if (filtro === 'casas') propiedadesFiltradas = propiedades.filter(p => p.tipo === 'Casa');
+    else if (filtro === 'departamentos') propiedadesFiltradas = propiedades.filter(p => p.tipo === 'Departamento');
+
     if (propiedadesFiltradas.length === 0) {
         container.innerHTML = `
             <div class="col-12 empty-state">
@@ -192,32 +191,32 @@ async function mostrarTodasLasPropiedades(filtro = 'todas') {
         `;
         return;
     }
-    
+
     container.innerHTML = propiedadesFiltradas.map(propiedad => crearTarjetaPropiedad(propiedad)).join('');
 }
 
-function aplicarFiltro(filtro) {
+function aplicarFiltro(filtro, event) {
     const botones = document.querySelectorAll('.btn-filter');
     botones.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if (event) event.target.classList.add('active');
     mostrarTodasLasPropiedades(filtro);
 }
 
 function buscarPropiedades() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     const container = document.getElementById('properties-container');
-    
+
     if (!searchTerm) {
         mostrarTodasLasPropiedades();
         return;
     }
-    
+
     const propiedadesFiltradas = propiedadesData.filter(p => 
         p.titulo.toLowerCase().includes(searchTerm) ||
         p.ubicacion.toLowerCase().includes(searchTerm) ||
         p.descripcion.toLowerCase().includes(searchTerm)
     );
-    
+
     if (propiedadesFiltradas.length === 0) {
         container.innerHTML = `
             <div class="col-12 empty-state">
@@ -228,26 +227,77 @@ function buscarPropiedades() {
         `;
         return;
     }
-    
+
     container.innerHTML = propiedadesFiltradas.map(propiedad => crearTarjetaPropiedad(propiedad)).join('');
 }
 
+// ==============================
+// POPUP AVISO DE PRIVACIDAD
+// ==============================
+function initPrivacyPopup() {
+    const popup = document.getElementById("privacy-popup");
+    const btn = document.getElementById("privacy-accept-btn");
+    if (!popup || !btn) return;
+
+    // Mostrar popup solo si no se ha aceptado
+    if (localStorage.getItem("privacyAccepted") !== "true") {
+        popup.classList.add("show");
+    }
+
+    // Cerrar popup al aceptar
+    btn.addEventListener("click", () => {
+        localStorage.setItem("privacyAccepted", "true");
+        popup.classList.remove("show");
+    });
+}
+
+// ==============================
+// FORMULARIO DE CONTACTO
+// ==============================
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const messageDiv = document.getElementById('form-message');
+        if (!messageDiv) return;
+
+        messageDiv.innerHTML = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill"></i> 
+                <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        `;
+
+        this.reset();
+
+        setTimeout(() => {
+            messageDiv.innerHTML = '';
+        }, 5000);
+    });
+}
+
+// ==============================
+// INICIALIZACIÓN AL CARGAR LA PÁGINA
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('featured-properties')) {
-        mostrarPropiedadesDestacadas();
-    }
-    
-    if (document.getElementById('properties-container')) {
-        mostrarTodasLasPropiedades();
-    }
-    
+    // Funciones de propiedades (si existen)
+    if (typeof mostrarPropiedadesDestacadas === "function") mostrarPropiedadesDestacadas();
+    if (typeof mostrarTodasLasPropiedades === "function") mostrarTodasLasPropiedades();
+
+    // Buscador de propiedades
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' && typeof buscarPropiedades === "function") {
                 buscarPropiedades();
             }
         });
     }
-});
 
+    // Inicializar popup y formulario
+    initPrivacyPopup();
+    initContactForm();
+});
