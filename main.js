@@ -231,25 +231,39 @@ function buscarPropiedades() {
     container.innerHTML = propiedadesFiltradas.map(propiedad => crearTarjetaPropiedad(propiedad)).join('');
 }
 
+
+
 // ==============================
 // POPUP AVISO DE PRIVACIDAD
 // ==============================
-function initPrivacyPopup() {
-    const popup = document.getElementById("privacy-popup");
-    const btn = document.getElementById("privacy-accept-btn");
-    if (!popup || !btn) return;
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMContentLoaded ejecutado");
 
-    // Mostrar popup solo si no se ha aceptado
-    if (localStorage.getItem("privacyAccepted") !== "true") {
-        popup.classList.add("show");
+    const popup = document.getElementById("privacy-popup");
+    const btn   = document.getElementById("privacy-accept-btn");
+
+    if (!popup) {
+        console.warn("No se encontró #privacy-popup");
+        return;
     }
 
-    // Cerrar popup al aceptar
+    if (!btn) {
+        console.warn("No se encontró #privacy-accept-btn");
+        return;
+    }
+
+    // Reseteamos por prueba: siempre muestra popup al entrar
+    // localStorage.removeItem("privacyAccepted"); // descomenta si quieres borrar memoria
+
+    // Mostrar popup (fuerza que se vea siempre la primera vez)
+    popup.classList.add("show");
+
+    // Al aceptar
     btn.addEventListener("click", () => {
         localStorage.setItem("privacyAccepted", "true");
         popup.classList.remove("show");
     });
-}
+});
 
 // ==============================
 // FORMULARIO DE CONTACTO
