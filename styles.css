@@ -985,9 +985,3 @@ border:none;
 }
 
 
-@media (max-width: 480px) {
-    .hero-text {
-        bottom: 45px; /* más abajo en celulares */
-        text-align: center;
-    }
-}
