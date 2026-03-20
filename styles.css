@@ -1009,20 +1009,3 @@ border:none;
     }
 }
 
-@media (max-width: 768px) and (min-width: 481px) {
-    /* tablets y móviles medianos */
-    .hero-text {
-        bottom: 5%;
-        right: 5%;
-        text-align: left;
-        padding: 10px;
-    }
-
-    .hero-text h1 {
-        font-size: 28px;
-    }
-
-    .hero-text p {
-        font-size: 18px;
-    }
-}
