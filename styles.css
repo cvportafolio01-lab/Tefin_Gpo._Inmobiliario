@@ -985,27 +985,9 @@ border:none;
 }
 
 
-/* =========================
-   HERO TEXT RESPONSIVE
-========================= */
-@media (max-width: 480px) { /* celulares pequeños tipo Samsung A55 */
+@media (max-width: 480px) {
     .hero-text {
-        position: relative; /* ya no absolute */
-        bottom: auto;
-        right: auto;
-        left: auto;
-        text-align: center; /* centrado para móviles */
-        color: #06edf9;
-        padding: 20px;
-    }
-
-    .hero-text h1 {
-        font-size: 24px; /* más pequeño */
-        line-height: 1.2;
-    }
-
-    .hero-text p {
-        font-size: 16px; /* más pequeño */
+        bottom: 45px; /* más abajo en celulares */
+        text-align: center;
     }
 }
-
