@@ -1,23 +1,55 @@
+
 // ==============================
 // CONTADORES ANIMADOS
 // ==============================
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.counter').forEach(counter => {
-        const update = () => {
-            let target = +counter.dataset.target;
-            let c = +counter.innerText;
-            let inc = target / 120;
+// JAVASCRIPT - Animación de Contadores
+/* 3. JAVASCRIPT CORREGIDO - FUNCIONA SIEMPRE */
 
-            if (c < target) {
-                counter.innerText = Math.ceil(c + inc);
-                setTimeout(update, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        update();
+document.addEventListener('DOMContentLoaded', function() {
+    // Función de animación manual (sin observer para asegurar que funcione)
+    function animateNumbers() {
+        const numbers = document.querySelectorAll('.stat-number');
+        
+        numbers.forEach(numberEl => {
+            const target = parseInt(numberEl.getAttribute('data-target'));
+            const suffix = numberEl.getAttribute('data-suffix') || '';
+            let current = 0;
+            const duration = 2500;
+            const stepTime = 30;
+            const steps = duration / stepTime;
+            const increment = target / steps;
+
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                numberEl.innerHTML = Math.floor(current).toLocaleString() + suffix;
+            }, stepTime);
+        });
+    }
+
+    // Inicia animación inmediatamente + scroll
+    animateNumbers();
+    
+    // Reinicia si hacen scroll
+    let animated = false;
+    window.addEventListener('scroll', function() {
+        if (!animated && window.scrollY > 100) {
+            animated = true;
+            setTimeout(animateNumbers, 200);
+        }
     });
 });
+
+
+
+
+
+
 
 // ==============================
 // PROPIEDADES

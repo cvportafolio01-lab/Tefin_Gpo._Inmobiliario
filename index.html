@@ -12,6 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- ANTES de </head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
 </head>
 
 <body>
@@ -85,85 +88,93 @@
 
 
 
-    <!-- TRAYECTORIA -->
-    <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="about-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 text-center">
+    
+    
 
-                    <span class="about-badge">Mi Trayectoria Profesional</span>
+<!-- TRAYECTORIA PROFESIONAL - DISEÑO PERFIL 50/50 BOVO -->
+<section id="sobre-mi" class="section-padding profile-professional-section">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="about-badge">Mi Trayectoria Profesional</span>
+            <h2 class="section-title mt-3">Lic. Ernesto Sánchez Abarca</h2>
+            <div class="section-divider"></div>
+        </div>
 
-                    <h2 class="about-title">
-                        Lic. Ernesto Sánchez Abarca
-                    </h2>
-
-                    <h5 class="about-subtitle">
+        <div class="row align-items-start">
+            <!-- IZQUIERDA: BIOGRAFÍA -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="profile-content">
+                    <h3 class="profile-subtitle">
                         Abogado · Broker BBVA · CEO Fundador de TEFIN Gpo. Inmobiliario
-                    </h5>
+                    </h3>
 
-                    <p class="about-text">
-                        Soy agente inmobiliario con más de <strong>30 años de experiencia</strong>
-                        en el mercado. A lo largo de mi trayectoria he acompañado a cientos de
-                        familias a tomar una de las decisiones más importantes de su vida:
-                        comprar, vender o invertir en su patrimonio.
+                    <p class="profile-text">
+                        Soy agente inmobiliario con más de <strong>30 años de experiencia</strong> en el mercado. A lo largo de mi trayectoria he acompañado a cientos de familias a tomar una de las decisiones más importantes de su vida: comprar, vender o invertir en su patrimonio.
                     </p>
 
-                    <p class="about-text">
-                        Como abogado de profesión, brindo asesoría legal integral en cada operación,
-                        garantizando seguridad jurídica, transparencia y confianza en todo el proceso.
+                    <p class="profile-text">
+                        Como abogado de profesión, brindo <strong>asesoría legal integral</strong> en cada operación, garantizando seguridad jurídica, transparencia y confianza en todo el proceso.
                     </p>
 
-                    <p class="about-text">
-                        Soy <strong>Broker autorizado por BBVA</strong>, especializado en la gestión
-                        y colocación de créditos hipotecarios. He sido reconocido como
-                        <strong>Agente Número 1 en colocación</strong> y cuento con una sólida experiencia
-                        estructurando soluciones financieras a la medida de cada cliente.
+                    <p class="profile-text">
+                        Soy <strong>Broker autorizado por BBVA</strong>, especializado en la gestión y colocación de créditos hipotecarios. He sido reconocido como <strong>Agente Número 1 en colocación</strong> y cuento con una sólida experiencia estructurando soluciones financieras a la medida de cada cliente.
                     </p>
 
-                    <p class="about-text">
-                        Fundé <strong>TEFIN Gpo. Inmobiliario</strong> con el propósito de ofrecer un servicio
-                        profesional, estratégico y humano, enfocado en resultados reales y en relaciones
-                        de largo plazo.
+                    <p class="profile-text">
+                        Fundé <strong>TEFIN Gpo. Inmobiliario</strong> con el propósito de ofrecer un servicio profesional, estratégico y humano, enfocado en resultados reales y en relaciones de largo plazo.
                     </p>
 
-                    <!-- MÉTRICAS DESTACADAS -->
+                    <div class="text-center text-lg-start mt-5">
+                        <a href="#contacto" class="btn btn-about">
+                            Trabajemos juntos
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-
-                    <div class="container text-center">
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <h2 class="counter" data-target="30">0</h2>
-                                <p>Años de experiencia</p>
-                            </div>
-                            <div class="col-md-4">
-                                <h2 class="counter" data-target="1">0</h2>
-                                <p>Reconocimiento BBVA Numero:</p>
-                            </div>
-
-                            <div class="col-md-4">
-                                <h2 class="counter" data-target="1000">0</h2>
-                                <p>Créditos colocados</p>
-                            </div>
-
-                            <div class="col-md-4">
-                                <h2 class="counter" data-target="500">0</h2>
-                                <p>Operaciones exitosas</p>
-                            </div>
-
+            <!-- DERECHA: MÉTRICAS ANIMADAS -->
+            <div class="col-lg-6">
+                <div class="profile-stats">
+                    <!-- 30 AÑOS -->
+                    <div class="stat-card">
+                        <i class="fas fa-award stat-icon"></i>
+                        <div>
+                            <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                            <div class="stat-label">Años de Experiencia</div>
                         </div>
                     </div>
 
-                    <a href="#contacto" class="btn btn-about mt-4">
-                        Trabajemos juntos
-                    </a>
+                    <!-- #1 BBVA -->
+                    <div class="stat-card">
+                        <i class="fas fa-trophy stat-icon"></i>
+                        <div>
+                            <div class="stat-number" data-target="1" data-suffix="º">0</div>
+                            <div class="stat-label">Reconocimiento BBVA</div>
+                        </div>
+                    </div>
 
+                    <!-- 1000 CRÉDITOS -->
+                    <div class="stat-card">
+                        <i class="fas fa-home stat-icon"></i>
+                        <div>
+                            <div class="stat-number" data-target="1000" data-suffix="+">0</div>
+                            <div class="stat-label">Créditos Colocados</div>
+                        </div>
+                    </div>
+
+                    <!-- 500 OPERACIONES -->
+                    <div class="stat-card">
+                        <i class="fas fa-handshake stat-icon"></i>
+                        <div>
+                            <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                            <div class="stat-label">Operaciones Exitosas</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
 
     <!-- SECCIÓN DIRECTOR DE VENTAS -->
     <section id="director-ventas" class="director-section py-5">

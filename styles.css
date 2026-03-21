@@ -313,6 +313,204 @@ border:none;
 
 
 
+
+
+
+
+
+
+
+
+css
+/* ===== PERFIL PROFESIONAL - COLORES AZUL/MORADO BOVO ===== */
+
+/* VARIABLES NUEVAS - AZUL/MORADO */
+:root {
+    --primary: #7b1fa2;           /* MORADO principal */
+    --secondary: #4decef;         /* CIAN/azul agua */
+    --accent-gold: #00ffd5;       /* VERDE NEON (reemplaza dorado) */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --sidebar-bg: linear-gradient(135deg, #f8fbff 0%, #e8f7ff 100%);
+}
+
+/* CONTENIDO LADO IZQUIERDO */
+.profile-content {
+    padding: 2.5rem;
+    background: var(--sidebar-bg);
+    border-radius: 20px;
+    border-left: 6px solid var(--accent-gold);
+    box-shadow: 0 15px 40px rgba(123, 31, 162, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.profile-subtitle {
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--primary), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.profile-text {
+    font-size: 1.15rem;
+    color: var(--text-dark) !important;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+/* STATS LADO DERECHO */
+.profile-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.95);
+    border-left: 5px solid var(--accent-gold);
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(123, 31, 162, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    transform: scaleX(0);
+    transition: transform .4s ease;
+}
+
+.stat-card:hover {
+    transform: translateX(12px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(77, 236, 239, 0.3);
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* 🔥 ICONOS CIAN BRILLANTES */
+.stat-icon {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-size: 1.8rem !important;
+    color: var(--accent-gold) !important;
+    width: 70px !important;
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, rgba(0, 255, 213, 0.25), rgba(123, 31, 162, 0.2));
+    border-radius: 50% !important;
+    border: 3px solid rgba(0, 255, 213, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 255, 213, 0.4);
+    transition: all .4s ease !important;
+    flex-shrink: 0;
+}
+
+.stat-card:hover .stat-icon {
+    transform: rotate(8deg) scale(1.15);
+    box-shadow: 0 0 0 4px rgba(0, 255, 213, 0.5), 0 12px 35px rgba(0, 255, 213, 0.6);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--accent-gold) !important;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-shadow: 0 2px 12px rgba(0, 255, 213, 0.5);
+    line-height: 1;
+}
+
+.stat-label {
+    margin: 0;
+    color: var(--primary) !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+/* BOTÓN MORADO/CIAN */
+.btn-about {
+    background: linear-gradient(45deg, var(--primary), var(--accent-gold));
+    border: none;
+    color: white !important;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all .3s ease;
+    box-shadow: 0 8px 25px rgba(123, 31, 162, 0.3);
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-about:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 255, 213, 0.4);
+}
+
+/* SECCIÓN PRINCIPAL */
+.profile-professional-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8fbff 0%, #e8f7ff 100%);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .profile-content {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .profile-stats {
+        gap: 1.25rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem 1.75rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+    }
+    
+    .stat-icon {
+        width: 80px !important;
+        height: 80px !important;
+        font-size: 2rem !important;
+    }
+    
+    .stat-number {
+        font-size: 2.25rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /* ==========================
    boton reconocimientos bbva
 ========================== */
@@ -985,3 +1183,46 @@ border:none;
 }
 
 
+
+
+
+/* 🔥 SAMSUNG 360x740 - TEXTO MÁS ABAJO */
+@media only screen and (max-width: 360px) and (max-height: 740px) {
+    /* HERO TEXT - MUCHO MÁS ABAJO */
+    .hero-text {
+        bottom: 2% !important;      /* ← MÁS ABAJO que 5% */
+        right: 3% !important;
+        padding-bottom: 30px !important;  /* Más espacio abajo */
+        padding-top: 25px !important;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.55rem !important;  /* Ligeramente más pequeño */
+        line-height: 1.15 !important;
+        margin-bottom: 12px !important;
+        padding-top: 20px !important;
+    }
+    
+    .hero-text .lead {
+        font-size: 0.92rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* FOTO AGENTE - Más arriba para compensar */
+    .agent-photo {
+        top: 12% !important;     /* ← MÁS ARRIBA */
+        left: 3% !important;
+        width: 135px !important;
+        height: 135px !important;
+    }
+}
+
+/* Refuerzo para pantallas muy angostas */
+@media (max-width: 360px) and (orientation: portrait) {
+    .hero-text {
+        bottom: 1.5% !important;  /* ← AÚN MÁS ABAJO */
+        right: 2.5% !important;
+        max-width: 92% !important;
+    }
+}
