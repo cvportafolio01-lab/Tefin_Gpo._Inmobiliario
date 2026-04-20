@@ -852,6 +852,48 @@ css
 }
 
 
+
+
+
+
+
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* formato 16:9 */
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* VIDEO LOCAL */
+.video-wrapper video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* YOUTUBE */
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 /* =========================
    boton de sigueme en mis redes sociales debajo de los vidos */
    /* BOTON REDES */
