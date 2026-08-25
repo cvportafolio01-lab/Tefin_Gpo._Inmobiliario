@@ -927,13 +927,23 @@ css
     object-fit: contain;
 }
 
-/* CELULAR */
-@media (max-width: 768px) {
+/* ================================
+   CELULAR
+================================ */
+
+@media screen and (max-width: 768px) {
+
     .video-section {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 15px;
     }
+
+    .video-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
 }
 
 
